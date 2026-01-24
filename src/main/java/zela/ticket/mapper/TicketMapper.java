@@ -10,7 +10,7 @@ public class TicketMapper {
         entity.setId(dto.id());
         entity.setTitre(dto.titre());
         entity.setDescription(dto.description());
-        entity.setUser(dto.user_id());
+        entity.setUser(dto.id_user());
         entity.setDate_creation(dto.date_creation());
         entity.setDate_cloture(dto.date_cloture());
 

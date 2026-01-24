@@ -15,8 +15,15 @@ public class UserController {
 
     private final UserService service;
 
-    public UserDTO createUser(@RequestBody UserDTO userDTO) {
-        return service.createUser(userDTO);
+    @RequestMapping("/create")
+    public void createUser(@RequestBody UserDTO userDTO) {
+        service.createUser(userDTO);
+    }
+
+    @RequestMapping("/current")
+    public UserDTO getCurrentUser() {
+        Long userId = service.getCurrentUserId();
+        return service.getUserById(userId);
     }
 
 }

@@ -8,7 +8,7 @@ public record TicketDTO(
         Long id,
         String titre,
         String description,
-        UserEntity user_id,
+        UserEntity id_user,
         LocalDateTime date_creation,
         LocalDateTime date_cloture) {
 
