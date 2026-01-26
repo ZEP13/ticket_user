@@ -39,4 +39,9 @@ public class TicketController {
         return service.getUserTicketsForCurrentUser();
     }
 
+    @GetMapping("/all")
+    public List<TicketDTO> getAllTicket() {
+        return service.getAllTickets();
+    }
+
 }

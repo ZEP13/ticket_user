@@ -8,7 +8,8 @@ public class UserMapper {
         return new UserDTO(
                 entity.getId(),
                 entity.getNom(),
-                entity.getPassword());
+                entity.getPassword(),
+                entity.getRole());
     }
 
     public static UserEntity toEntity(UserDTO dto) {
@@ -17,6 +18,7 @@ public class UserMapper {
         entity.setId(dto.id());
         entity.setNom(dto.nom());
         entity.setPassword(dto.password());
+        entity.setRole(dto.role());
 
         return entity;
     }

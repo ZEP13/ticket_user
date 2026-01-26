@@ -71,4 +71,9 @@ public class TicketService {
                 .map(TicketMapper::toDto)
                 .toList();
     }
+
+    public List<TicketDTO> getAllTickets() {
+        List<TicketEntity> tickets = repo.findAll();
+        return tickets.stream().map(TicketMapper::toDto).toList();
+    }
 }

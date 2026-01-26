@@ -20,10 +20,11 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/users/create").not().authenticated()
                         .requestMatchers("/tickets/create").authenticated()
-                        .requestMatchers("/tickets/end/**").authenticated()
+                        .requestMatchers("/tickets/end/**").hasAnyRole("ADMIN", "USER")
                         .requestMatchers("/tickets/byUser").authenticated()
                         .requestMatchers("/tickets/byId/**").authenticated()
                         .requestMatchers("/users/current").authenticated()
+                        .requestMatchers("/tickets/all").hasRole("ADMIN")
                         .anyRequest().denyAll())
                 .httpBasic(Customizer.withDefaults())
                 .build();
